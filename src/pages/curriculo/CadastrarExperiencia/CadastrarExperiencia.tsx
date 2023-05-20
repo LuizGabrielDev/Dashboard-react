@@ -62,63 +62,6 @@ const CadastrarExperiencia: React.FC = () => {
 
     return (
         <div className={styles.formWrapper}>
-            {/* <Formik
-                initialValues={experiencia || initialValues}
-                validationSchema={validationSchema}
-                onSubmit={onSubmit}
-            >
-                {({ errors, touched }) => (
-                    <FormFormik className={styles.form}>
-                        <h2 className={styles.title}>Cadastrar Experiência</h2>
-                        <Input
-                            label="Título"
-                            name="titulo"
-                            errors={errors.titulo}
-                            touched={touched.titulo}
-                        />
-
-                        <Input
-                            label="Ano Início"
-                            name="anoInicio"
-                            errors={errors.anoInicio}
-                            touched={touched.anoInicio}
-                        />
-
-                        <Input
-                            label="Ano Fim"
-                            name="anoFim"
-                            errors={errors.anoFim}
-                            touched={touched.anoFim}
-                        />
-
-                        <Select
-                            label="Tipo"
-                            name="tipo"
-                            options={[
-                                {
-                                    value: "profissional",
-                                    label: "Profissional",
-                                },
-                                { value: "academico", label: "Acadêmico" },
-                            ]}
-                            errors={errors.tipo}
-                            touched={touched.tipo}
-                        ></Select>
-
-                        <Textarea
-                            label="Descrição"
-                            name="descricao"
-                            errors={errors.descricao}
-                            touched={touched.descricao}
-                        />
-
-                        <button type="submit" className={styles.button}>
-                            Salvar
-                        </button>
-                    </FormFormik>
-                )}
-            </Formik> */}
-
             <Form
                 initialValues={experiencia || initialValues}
                 validationSchema={validationSchema}

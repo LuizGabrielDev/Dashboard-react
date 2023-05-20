@@ -50,39 +50,6 @@ const Login = () => {
 
     return (
         <div className={styles.loginWrapper}>
-            {/* <div className={styles.formWrapper}>
-                <Formik
-                    initialValues={initialValues}
-                    validationSchema={validationSchema}
-                    onSubmit={onSubmit}
-                >
-                    {({ errors, touched }) => (
-                        <Form className={styles.form}>
-                            <h1 className={styles.title}>MEU SITE PESSOAL</h1>
-
-                            <Input
-                                label="E-mail"
-                                name="email"
-                                type="email"
-                                errors={errors.email}
-                                touched={touched.email}
-                            />
-
-                            <Input
-                                label="Password"
-                                name="password"
-                                type="password"
-                                errors={errors.password}
-                                touched={touched.password}
-                            />
-                            <button type="submit" className={styles.button}>
-                                Login
-                            </button>
-                        </Form>
-                    )}
-                </Formik>
-            </div> */}
-
             <Form
                 initialValues={initialValues}
                 validationSchema={validationSchema}

@@ -81,13 +81,6 @@ const ListaPortfolio: React.FC = () => {
                             >
                                 Excluir
                             </Button>
-                            {/* <button onClick={() => handleEdit(portfolio)}>
-                                Editar
-                            </button>
-                            <button onClick={() => handleDelete(portfolio.id)}>
-                                {" "}
-                                Excluir{" "}
-                            </button> */}
                         </td>
                     </tr>
                 ))}

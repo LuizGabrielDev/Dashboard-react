@@ -64,17 +64,6 @@ const ListaExperiencia: React.FC = () => {
                         <td>{experiencia.anoInicio}</td>
                         <td>{experiencia.anoFim}</td>
                         <td>
-                            {/* <button onClick={() => handleEdit(experiencia)}>
-                                {" "}
-                                Editar{" "}
-                            </button>
-                            <button
-                                onClick={() => handleDelete(experiencia.id)}
-                            >
-                                {" "}
-                                Deletar{" "}
-                            </button> */}
-
                             <Button onClick={() => handleEdit(experiencia)}>
                                 {" "}
                                 Editar{" "}

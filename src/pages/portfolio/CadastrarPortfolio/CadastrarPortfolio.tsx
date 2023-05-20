@@ -5,14 +5,19 @@ import styles from "./CadastrarPortfolio.module.css";
 import * as Yup from "yup";
 // import { Formik, Form } from "formik";
 import Input from "../../../components/forms/Input";
-import { Portfolio, createPortfolio } from "../../../services/portfolioService";
-import { useNavigate } from "react-router-dom";
+import {
+    Portfolio,
+    createOrUpdatePortfolio,
+} from "../../../services/portfolioService";
+import { useLocation, useNavigate } from "react-router-dom";
 import Form from "../../../components/forms/Form";
 import Title from "../../../components/common/Title";
 import Button from "../../../components/common/Button";
 
 const CadastrarPortfolio = () => {
     const navigate = useNavigate();
+    const location = useLocation();
+    const portfolio = location.state as Portfolio;
 
     const initialValues: Portfolio = {
         id: 0,
@@ -33,7 +38,7 @@ const CadastrarPortfolio = () => {
         { resetForm }: { resetForm: () => void }
     ) => {
         try {
-            await createPortfolio(values);
+            await createOrUpdatePortfolio(values);
             console.log(values);
             resetForm();
             navigate("/portfolio/lista");
@@ -46,44 +51,8 @@ const CadastrarPortfolio = () => {
 
     return (
         <div className={styles.formWrapper}>
-            {/* <Formik
-                initialValues={initialValues}
-                validationSchema={validationSchema}
-                onSubmit={onSubmit}
-            >
-                {({ errors, touched }) => (
-                    <Form className={styles.form}>
-                        <h2 className={styles.title}>Cadastro de Portfólio</h2>
-                        <Input
-                            label="Link"
-                            name="link"
-                            errors={errors.link}
-                            touched={touched.link}
-                        />
-
-                        <Input
-                            label="Imagem"
-                            name="image"
-                            errors={errors.image}
-                            touched={touched.image}
-                        />
-
-                        <Input
-                            label="Título"
-                            name="title"
-                            errors={errors.title}
-                            touched={touched.title}
-                        />
-
-                        <button className={styles.button} type="submit">
-                            Enviar
-                        </button>
-                    </Form>
-                )}
-            </Formik> */}
-
             <Form
-                initialValues={initialValues}
+                initialValues={portfolio || initialValues}
                 validationSchema={validationSchema}
                 onSubmit={onSubmit}
             >
